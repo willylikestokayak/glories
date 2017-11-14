@@ -1,8 +1,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  def hello
-    render html: 'hello dummy'
+  before_action :current_user
+
+  def is_authenticated
+    unless current_user
+      flash[:danger] = "You must sign in"
+      redirect_to login_path
+    end
   end
-  
+  def current_user
+    @current_user ||= User.find_by_id(session[:user_id])
+  end
 end
