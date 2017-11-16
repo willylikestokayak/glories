@@ -1,17 +1,18 @@
 class User < ApplicationRecord
-  
-    validates :email,
-    presence: true,
-    uniqueness: {case_sensitive: false}
-  
-    validates :password,
-    length: (7..35),
-    on: :create
-  
-    has_secure_password
-  
-    def self.authenticate(params)
-      User.find_by_email(params[:email]).try(:authenticate, params[:password])
-    end
+  has_many :blogs
+
+  validates :email,
+  presence: true,
+  uniqueness: {case_sensitive: false}
+
+  validates :password,
+  length: (7..35),
+  on: :create
+
+  has_secure_password
+
+  def self.authenticate(params)
+    User.find_by_email(params[:email]).try(:authenticate, params[:password])
+  end
   
 end
