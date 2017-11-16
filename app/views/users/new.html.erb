@@ -3,8 +3,8 @@
 <div class="row">
   <div class="col-md-12">
     <div class="mui-textfield">
+      <%= form.label :email, for: 'email' %>
       <%= form.text_field :email, class: 'f', id: 'email' %>
-      <%= form.label :email, class: '', for: 'email' %>
     </div>
   </div>
 </div>
@@ -12,8 +12,8 @@
 <div class="row">
   <div class="col-md-12">
     <div class="mui-textfield">
-      <%= form.text_field :name, class: '', id: 'name' %>
       <%= form.label :name, class: '', for: 'name' %>
+      <%= form.text_field :name, class: '', id: 'name' %>
     </div>
   </div>
 </div>
@@ -21,8 +21,8 @@
 <div class="row">
   <div class="col-md-12">
     <div class="mui-textfield">
-      <%= form.password_field :password, class: '', id: 'password' %>
-      <%= form.label :password, class: '', for: 'password' %>
+      <%= form.label :password, for: 'password' %>
+      <%= form.password_field :password, id: 'password', placeholder: "Enter Your Password, Dummy" %>
     </div>
   </div>
 </div>

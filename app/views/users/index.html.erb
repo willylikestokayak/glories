@@ -1,3 +1,5 @@
 
-  <h1>Welcome <%= @current_user %></h1>
-
+  <h1>Welcome <%= @current_user.name %></h1>
+<% if @current_user %>
+  <p>Write a blog</p>
+<%end%>
